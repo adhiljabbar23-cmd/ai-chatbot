@@ -51,4 +51,4 @@ Logistic Regression predicts the intent (e.g., greeting, joke, help)
 A random response is selected from the matched intent and returned
 
 Author
-Muhammed Adhil M J — B.Tech AI & ML, Vidya Academy of Science and Technolog
+Muhammed Adhil M J — B.Tech AI & ML, Vidya Academy of Science and Technology
