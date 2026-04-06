@@ -1,0 +1,183 @@
+{
+  "intents": [
+    {
+      "tag": "greeting",
+      "patterns": [
+        "hi",
+        "hello",
+        "hey",
+        "good morning",
+        "good evening",
+        "what's up",
+        "howdy"
+      ],
+      "responses": [
+        "Hello! How can I help you?",
+        "Hey there! What can I do for you?",
+        "Hi! Nice to meet you."
+      ]
+    },
+    {
+      "tag": "goodbye",
+      "patterns": [
+        "bye",
+        "goodbye",
+        "see you",
+        "see ya",
+        "later",
+        "take care",
+        "quit",
+        "exit"
+      ],
+      "responses": [
+        "Goodbye! Have a great day!",
+        "See you later!",
+        "Take care! Come back anytime."
+      ]
+    },
+    {
+      "tag": "thanks",
+      "patterns": [
+        "thanks",
+        "thank you",
+        "that's helpful",
+        "appreciate it",
+        "thx",
+        "ty"
+      ],
+      "responses": [
+        "You're welcome!",
+        "Happy to help!",
+        "Anytime! Let me know if you need anything else."
+      ]
+    },
+    {
+      "tag": "name",
+      "patterns": [
+        "what is your name",
+        "who are you",
+        "what do i call you",
+        "your name"
+      ],
+      "responses": [
+        "I'm Adhil's AI Chatbot!",
+        "You can call me ChatBot.",
+        "I'm an AI assistant built with Python and NLP."
+      ]
+    },
+    {
+      "tag": "age",
+      "patterns": [
+        "how old are you",
+        "what is your age",
+        "when were you created"
+      ],
+      "responses": [
+        "I'm a freshly built chatbot!",
+        "Age is just a number — I was created recently with Python."
+      ]
+    },
+    {
+      "tag": "weather",
+      "patterns": [
+        "what is the weather",
+        "how is the weather",
+        "is it raining",
+        "weather today"
+      ],
+      "responses": [
+        "I can't check live weather, but you can try weather.com!",
+        "I don't have real-time data, but Google has the latest weather for you."
+      ]
+    },
+    {
+      "tag": "joke",
+      "patterns": [
+        "tell me a joke",
+        "say something funny",
+        "make me laugh",
+        "joke"
+      ],
+      "responses": [
+        "Why do programmers prefer dark mode? Because light attracts bugs!",
+        "I told my computer I needed a break. Now it won't stop sending me Kit-Kat ads.",
+        "Why was the JavaScript developer sad? Because he didn't know how to 'null' his feelings."
+      ]
+    },
+    {
+      "tag": "help",
+      "patterns": [
+        "help",
+        "what can you do",
+        "how can you help",
+        "what are your features",
+        "capabilities"
+      ],
+      "responses": [
+        "I can answer questions, tell jokes, and have a basic conversation with you!",
+        "I'm here to chat! Ask me anything — greetings, facts, or just say hi."
+      ]
+    },
+    {
+      "tag": "creator",
+      "patterns": [
+        "who made you",
+        "who created you",
+        "who built you",
+        "who is your creator"
+      ],
+      "responses": [
+        "I was built by Muhammed Adhil as part of his AI/ML portfolio!",
+        "My creator is Adhil — an AI & ML engineering student."
+      ]
+    },
+    {
+      "tag": "about_ai",
+      "patterns": [
+        "what is artificial intelligence",
+        "explain ai",
+        "what is machine learning",
+        "explain ml",
+        "what is nlp"
+      ],
+      "responses": [
+        "AI is the simulation of human intelligence in machines!",
+        "Machine Learning is a subset of AI where computers learn from data.",
+        "NLP stands for Natural Language Processing — it helps computers understand human language, just like I use it!"
+      ]
+    },
+    {
+      "tag": "favorite_color",
+      "patterns": [
+        "what is your favorite color",
+        "do you have a favorite color",
+        "which color do you like"
+      ],
+      "responses": [
+        "I like blue — the color of code editors!",
+        "As an AI, I see everything in binary, but I'd say I prefer the color of a terminal — dark green!"
+      ]
+    },
+    {
+      "tag": "time",
+      "patterns": [
+        "what time is it",
+        "current time",
+        "tell me the time"
+      ],
+      "responses": [
+        "I don't have access to real-time data, but your device clock is always accurate!",
+        "Check the clock on your screen — I can't access live time."
+      ]
+    },
+    {
+      "tag": "unknown",
+      "patterns": [],
+      "responses": [
+        "I'm not sure I understand. Can you rephrase that?",
+        "Hmm, I didn't get that. Try asking something else!",
+        "That's beyond my current knowledge. Ask me something else!"
+      ]
+    }
+  ]
+}

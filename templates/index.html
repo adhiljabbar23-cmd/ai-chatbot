@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AI Chatbot</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #0f0f1a;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .chat-container {
+      width: 420px;
+      height: 620px;
+      background: #1a1a2e;
+      border-radius: 16px;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+    }
+    .chat-header {
+      background: #16213e;
+      padding: 18px 20px;
+      border-bottom: 1px solid #0f3460;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .avatar {
+      width: 40px; height: 40px;
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 18px;
+    }
+    .header-info h3 { color: #e0e0e0; font-size: 15px; font-weight: 600; }
+    .header-info p  { color: #7ecf8e; font-size: 12px; margin-top: 2px; }
+    .online-dot {
+      width: 8px; height: 8px; background: #7ecf8e;
+      border-radius: 50%; display: inline-block; margin-right: 4px;
+    }
+    .chat-messages {
+      flex: 1;
+      overflow-y: auto;
+      padding: 20px 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .chat-messages::-webkit-scrollbar { width: 4px; }
+    .chat-messages::-webkit-scrollbar-track { background: transparent; }
+    .chat-messages::-webkit-scrollbar-thumb { background: #0f3460; border-radius: 4px; }
+    .message { display: flex; gap: 8px; max-width: 85%; }
+    .message.user  { align-self: flex-end; flex-direction: row-reverse; }
+    .message.bot   { align-self: flex-start; }
+    .bubble {
+      padding: 10px 14px;
+      border-radius: 14px;
+      font-size: 14px;
+      line-height: 1.5;
+      word-wrap: break-word;
+    }
+    .user  .bubble { background: #667eea; color: #fff; border-bottom-right-radius: 4px; }
+    .bot   .bubble { background: #16213e; color: #d0d0d0; border-bottom-left-radius: 4px; border: 1px solid #0f3460; }
+    .msg-avatar {
+      width: 28px; height: 28px; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 13px; flex-shrink: 0; align-self: flex-end;
+    }
+    .bot  .msg-avatar { background: #16213e; border: 1px solid #0f3460; }
+    .user .msg-avatar { background: #667eea; }
+    .typing { display: flex; gap: 4px; padding: 10px 14px; }
+    .typing span {
+      width: 7px; height: 7px; background: #667eea;
+      border-radius: 50%; animation: bounce 1.2s infinite;
+    }
+    .typing span:nth-child(2) { animation-delay: 0.2s; }
+    .typing span:nth-child(3) { animation-delay: 0.4s; }
+    @keyframes bounce {
+      0%, 60%, 100% { transform: translateY(0); }
+      30% { transform: translateY(-6px); }
+    }
+    .chat-input-area {
+      padding: 14px 16px;
+      background: #16213e;
+      border-top: 1px solid #0f3460;
+      display: flex;
+      gap: 10px;
+      align-items: center;
+    }
+    #user-input {
+      flex: 1;
+      background: #0f0f1a;
+      border: 1px solid #0f3460;
+      border-radius: 24px;
+      padding: 10px 16px;
+      color: #e0e0e0;
+      font-size: 14px;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    #user-input:focus { border-color: #667eea; }
+    #user-input::placeholder { color: #555; }
+    #send-btn {
+      width: 40px; height: 40px;
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      border: none; border-radius: 50%; cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      transition: opacity 0.2s;
+    }
+    #send-btn:hover { opacity: 0.85; }
+    #send-btn svg { width: 16px; height: 16px; fill: white; }
+    .welcome {
+      text-align: center; color: #555; font-size: 12px;
+      padding: 8px 0;
+    }
+  </style>
+</head>
+<body>
+<div class="chat-container">
+  <div class="chat-header">
+    <div class="avatar">&#129302;</div>
+    <div class="header-info">
+      <h3>AI ChatBot</h3>
+      <p><span class="online-dot"></span>Online • Built with Python + NLP</p>
+    </div>
+  </div>
+
+  <div class="chat-messages" id="chat-messages">
+    <p class="welcome">Conversation started</p>
+    <div class="message bot">
+      <div class="msg-avatar">&#129302;</div>
+      <div class="bubble">Hello! I'm an AI chatbot built with Python, NLTK and Scikit-learn. Ask me anything!</div>
+    </div>
+  </div>
+
+  <div class="chat-input-area">
+    <input type="text" id="user-input" placeholder="Type a message..." autocomplete="off"/>
+    <button id="send-btn" onclick="sendMessage()">
+      <svg viewBox="0 0 24 24"><path d="M2 21L23 12 2 3v7l15 2-15 2v7z"/></svg>
+    </button>
+  </div>
+</div>
+
+<script>
+  const input = document.getElementById('user-input');
+  const messages = document.getElementById('chat-messages');
+
+  input.addEventListener('keydown', e => { if (e.key === 'Enter') sendMessage(); });
+
+  function addMessage(text, sender) {
+    const div = document.createElement('div');
+    div.className = `message ${sender}`;
+    const avatar = sender === 'bot' ? '&#129302;' : '&#128100;';
+    div.innerHTML = `<div class="msg-avatar">${avatar}</div><div class="bubble">${text}</div>`;
+    messages.appendChild(div);
+    messages.scrollTop = messages.scrollHeight;
+  }
+
+  function showTyping() {
+    const div = document.createElement('div');
+    div.className = 'message bot'; div.id = 'typing-indicator';
+    div.innerHTML = `<div class="msg-avatar">&#129302;</div><div class="bubble typing"><span></span><span></span><span></span></div>`;
+    messages.appendChild(div);
+    messages.scrollTop = messages.scrollHeight;
+  }
+
+  function removeTyping() {
+    const t = document.getElementById('typing-indicator');
+    if (t) t.remove();
+  }
+
+  async function sendMessage() {
+    const text = input.value.trim();
+    if (!text) return;
+    addMessage(text, 'user');
+    input.value = '';
+    showTyping();
+    try {
+      const res = await fetch('/chat', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ message: text })
+      });
+      const data = await res.json();
+      setTimeout(() => { removeTyping(); addMessage(data.response, 'bot'); }, 700);
+    } catch {
+      removeTyping();
+      addMessage("Sorry, something went wrong. Make sure the server is running!", 'bot');
+    }
+  }
+</script>
+</body>
+</html>
