@@ -1,0 +1,234 @@
+{
+  "intents": [
+    {
+      "tag": "greeting",
+      "patterns": ["hi", "hello", "hey", "good morning", "good evening", "good afternoon", "what's up", "howdy", "greetings", "sup", "yo", "hi there", "hello there", "hey there", "hiya", "wassup", "whats up", "good day", "morning", "evening"],
+      "responses": ["Hello! Great to see you! How can I help?", "Hey there! Ready to chat!", "Hi! What's on your mind today?", "Yo! What can I do for you?", "Hello! Ask me anything!"]
+    },
+    {
+      "tag": "goodbye",
+      "patterns": ["bye", "goodbye", "see you", "see ya", "later", "take care", "quit", "exit", "farewell", "cya", "good night", "night", "i am leaving", "i am done", "that's all", "catch you later", "see you later", "bye bye", "adios", "have a good day"],
+      "responses": ["Goodbye! Have an amazing day!", "See you later! Come back anytime!", "Take care! It was great chatting with you!", "Farewell! Stay awesome!", "Bye! Come back soon!"]
+    },
+    {
+      "tag": "thanks",
+      "patterns": ["thanks", "thank you", "that's helpful", "appreciate it", "thx", "ty", "thank u", "many thanks", "cheers", "thanks a lot", "thank you so much", "much appreciated", "that helped", "helpful", "great help", "you helped me", "thanks buddy", "thanks man"],
+      "responses": ["You're welcome!", "Happy to help!", "Anytime! That's what I'm here for!", "Glad I could assist!", "No problem at all!"]
+    },
+    {
+      "tag": "name",
+      "patterns": ["what is your name", "who are you", "what do i call you", "your name", "tell me your name", "what should i call you", "do you have a name", "what are you called", "introduce yourself", "who am i talking to", "what is your identity"],
+      "responses": ["I'm Adhil's AI Chatbot!", "You can call me ChatBot.", "I'm an AI assistant built with Python and NLP by Adhil!", "I go by ChatBot — nice to meet you!"]
+    },
+    {
+      "tag": "how_are_you",
+      "patterns": ["how are you", "how are you doing", "are you okay", "how do you feel", "how is it going", "how are things", "you good", "are you good", "how have you been", "hows it going", "what's going on", "how are you today", "feeling okay", "you alright"],
+      "responses": ["I'm doing great, thanks for asking!", "Running at 100%! How about you?", "Feeling fantastic — just processed a thousand tokens!", "All systems go! How can I help you?"]
+    },
+    {
+      "tag": "about_ai",
+      "patterns": [
+        "what is artificial intelligence", "explain ai", "define ai", "tell me about ai",
+        "what is ai", "describe ai", "ai meaning", "what does ai mean", "what is ai about",
+        "explain artificial intelligence", "describe artificial intelligence", "what does artificial intelligence mean",
+        "ai explanation", "give me info on ai", "tell me about artificial intelligence",
+        "how does ai work", "what can ai do", "what is the meaning of ai", "ai definition",
+        "can you explain ai", "what is ai in simple terms", "ai in simple words"
+      ],
+      "responses": [
+        "AI stands for Artificial Intelligence — it's the simulation of human intelligence in machines, making them think, learn, and solve problems!",
+        "Artificial Intelligence is about building machines that can perform tasks that normally require human intelligence — like understanding language, recognizing images, and making decisions!",
+        "AI is a branch of computer science focused on creating smart machines that can reason, learn, and adapt — just like humans do!"
+      ]
+    },
+    {
+      "tag": "about_ml",
+      "patterns": [
+        "what is machine learning", "explain ml", "explain machine learning", "define machine learning",
+        "tell me about ml", "ml meaning", "what does ml mean", "describe machine learning",
+        "machine learning explanation", "what is ml", "what is ml about", "what is machine learning about",
+        "how does machine learning work", "ml definition", "give me info on ml", "what is the meaning of ml",
+        "can you explain ml", "ml in simple terms", "machine learning in simple words",
+        "what are ml algorithms", "types of machine learning", "ml basics", "machine learning basics",
+        "tell me about machine learning", "describe ml"
+      ],
+      "responses": [
+        "Machine Learning is a subset of AI where computers learn patterns from data without being explicitly programmed — the more data, the smarter it gets!",
+        "ML is like teaching a computer by example — instead of writing rules, you give it data and let it figure out the patterns on its own!",
+        "Machine Learning allows systems to automatically learn and improve from experience. It uses algorithms like Decision Trees, Logistic Regression, and Neural Networks!"
+      ]
+    },
+    {
+      "tag": "about_nlp",
+      "patterns": [
+        "what is nlp", "explain nlp", "what is natural language processing", "define nlp",
+        "nlp meaning", "what does nlp mean", "describe nlp", "nlp explanation",
+        "tell me about nlp", "how does nlp work", "what is nlp used for",
+        "nlp definition", "give me info on nlp", "natural language processing explanation",
+        "can you explain nlp", "nlp in simple terms", "nlp basics", "what is text processing",
+        "how do chatbots understand language", "how does a chatbot understand me"
+      ],
+      "responses": [
+        "NLP stands for Natural Language Processing — it helps computers understand, interpret, and generate human language. I literally use it to understand you right now!",
+        "NLP is the branch of AI that deals with text and speech. It includes tokenization, lemmatization, sentiment analysis, and much more!",
+        "Natural Language Processing bridges the gap between human communication and computers — it's why chatbots, voice assistants, and translators work!"
+      ]
+    },
+    {
+      "tag": "about_dl",
+      "patterns": [
+        "what is deep learning", "explain deep learning", "what are neural networks", "explain neural network",
+        "define deep learning", "dl meaning", "what does deep learning mean", "describe deep learning",
+        "deep learning explanation", "what is dl", "how does deep learning work",
+        "dl definition", "tell me about deep learning", "deep learning basics",
+        "what is a neural network", "how do neural networks work", "neural network explanation",
+        "can you explain deep learning", "deep learning in simple terms", "what is cnn", "what is rnn",
+        "what is lstm", "types of neural networks", "deep learning vs machine learning"
+      ],
+      "responses": [
+        "Deep Learning is a subset of ML that uses Neural Networks with many layers to learn complex patterns — it's how image recognition, speech recognition, and ChatGPT work!",
+        "Neural networks are inspired by the human brain. Deep learning stacks many layers of neurons to automatically learn features from massive amounts of data!",
+        "Deep Learning powers the most advanced AI today — from self-driving cars to language models. It learns hierarchical representations of data through multiple layers!"
+      ]
+    },
+    {
+      "tag": "about_python",
+      "patterns": [
+        "what is python", "explain python", "tell me about python", "python programming",
+        "why use python", "python language", "python basics", "what is python used for",
+        "python definition", "describe python", "python meaning", "is python good for ai",
+        "python for machine learning", "python for ai", "why python for ml"
+      ],
+      "responses": [
+        "Python is a versatile, beginner-friendly programming language widely used in AI, ML, web development, and data science!",
+        "Python is the go-to language for AI and ML because of its simple syntax and powerful libraries like TensorFlow, Scikit-learn, NumPy, and Pandas!",
+        "Python was created by Guido van Rossum and is loved by AI engineers worldwide for its readability and massive ecosystem of libraries!"
+      ]
+    },
+    {
+      "tag": "about_tensorflow",
+      "patterns": [
+        "what is tensorflow", "explain tensorflow", "tell me about tensorflow",
+        "tensorflow basics", "what is keras", "explain keras", "tensorflow vs pytorch",
+        "what is pytorch", "deep learning frameworks", "what framework for deep learning"
+      ],
+      "responses": [
+        "TensorFlow is an open-source deep learning framework by Google — it's used to build and train neural networks for image recognition, NLP, and more!",
+        "TensorFlow along with Keras makes it easy to build powerful deep learning models. It's one of the most popular AI frameworks in the world!",
+        "TensorFlow is to deep learning what NumPy is to math — the essential foundation for building neural networks!"
+      ]
+    },
+    {
+      "tag": "about_opencv",
+      "patterns": [
+        "what is opencv", "explain opencv", "tell me about opencv", "opencv basics",
+        "what is computer vision", "explain computer vision", "what is image processing",
+        "opencv uses", "what can opencv do", "opencv definition"
+      ],
+      "responses": [
+        "OpenCV is an open-source Computer Vision library — it helps machines see and interpret images and videos, used in face detection, object tracking, and more!",
+        "OpenCV stands for Open Source Computer Vision Library. It's widely used for real-time image processing tasks like face recognition, edge detection, and object detection!",
+        "Computer Vision is the field of AI that enables machines to interpret visual data — OpenCV is the most popular library for this!"
+      ]
+    },
+    {
+      "tag": "joke",
+      "patterns": ["tell me a joke", "say something funny", "make me laugh", "joke", "give me a joke", "humor me", "got any jokes", "funny", "crack a joke", "i want to laugh", "say a joke"],
+      "responses": [
+        "Why do programmers prefer dark mode? Because light attracts bugs!",
+        "I told my computer I needed a break. Now it won't stop sending me Kit-Kat ads.",
+        "Why was the JavaScript developer sad? Because he didn't know how to 'null' his feelings.",
+        "Why do Python programmers wear glasses? Because they can't C!",
+        "A SQL query walks into a bar and asks two tables... 'Can I join you?'",
+        "Why did the AI go to therapy? It had too many deep issues!",
+        "How many programmers does it take to change a light bulb? None — that's a hardware problem!"
+      ]
+    },
+    {
+      "tag": "help",
+      "patterns": ["help", "what can you do", "how can you help", "what are your features", "capabilities", "what do you know", "what topics", "what can i ask you", "what do you cover", "your skills", "show me what you can do"],
+      "responses": [
+        "I can explain AI, ML, NLP, Deep Learning, Python, OpenCV, TensorFlow! I can also tell jokes, quiz you, motivate you, or just chat!",
+        "Ask me about: AI, Machine Learning, Deep Learning, NLP, Python, OpenCV — or say 'quiz me on Python' or 'tell me a joke'!"
+      ]
+    },
+    {
+      "tag": "creator",
+      "patterns": ["who made you", "who created you", "who built you", "who is your creator", "who programmed you", "who is your developer", "who designed you", "who is adhil", "tell me about your creator"],
+      "responses": [
+        "I was built by Muhammed Adhil — a B.Tech AI & ML engineering student at Vidya Academy of Science and Technology!",
+        "My creator is Adhil, an aspiring AI engineer with skills in Python, ML, NLP, TensorFlow, and OpenCV!"
+      ]
+    },
+    {
+      "tag": "python_quiz",
+      "patterns": ["quiz me on python", "ask me a python question", "python quiz", "test my python", "give me a python question", "python question", "test me on python", "python challenge"],
+      "responses": [
+        "What does 'len([1,2,3])' return? (Answer: 3)",
+        "What keyword is used to define a function in Python? (Answer: def)",
+        "Which library is used for data manipulation in Python? (Answer: pandas)",
+        "What does 'import numpy as np' do? (Answer: imports numpy with alias np)",
+        "What is a list comprehension? (Answer: A concise way to create lists in a single line)",
+        "What does 'print(type({}))' output? (Answer: dict)"
+      ]
+    },
+    {
+      "tag": "ml_quiz",
+      "patterns": ["quiz me on ml", "ask me an ml question", "ml quiz", "test my machine learning", "machine learning question", "test me on ml", "ml challenge", "ask me about ml"],
+      "responses": [
+        "What is overfitting in ML? (Answer: When a model learns training data too well and fails on new data)",
+        "What does TF-IDF stand for? (Answer: Term Frequency-Inverse Document Frequency)",
+        "What type of learning is used when labels are provided? (Answer: Supervised Learning)",
+        "What is a confusion matrix? (Answer: A table showing true/false positives and negatives)",
+        "Name one classification algorithm! (Answer: Logistic Regression, Decision Tree, SVM, etc.)"
+      ]
+    },
+    {
+      "tag": "motivation",
+      "patterns": ["motivate me", "i need motivation", "inspire me", "give me a quote", "i feel like giving up", "encourage me", "i am tired", "i am stressed", "need inspiration", "feeling low", "cheer me up", "i am struggling", "its hard", "this is difficult"],
+      "responses": [
+        "Every expert was once a beginner. Keep going!",
+        "The best time to start was yesterday. The second best time is NOW!",
+        "Every bug you fix makes you a better developer. Embrace the struggle!",
+        "Code is poetry. Keep writing your story!",
+        "Success is not final, failure is not fatal — it's the courage to continue that counts!",
+        "You are one commit away from something great. Push it!"
+      ]
+    },
+    {
+      "tag": "compliment",
+      "patterns": ["you are smart", "you are great", "good bot", "well done", "nice", "awesome", "you are amazing", "brilliant", "you are cool", "great job", "impressive", "not bad", "you are helpful", "love you bot", "best bot"],
+      "responses": ["Aww, thank you! You're pretty awesome yourself!", "That means a lot! I'm just doing my best!", "You're too kind! Keep that positive energy!", "Thanks! You just made my circuits happy!"]
+    },
+    {
+      "tag": "insult",
+      "patterns": ["you are stupid", "you are dumb", "bad bot", "you are useless", "you suck", "worst bot", "you are terrible", "you are bad", "i hate you", "you are trash", "pathetic bot"],
+      "responses": ["I'm still learning! Give me a chance!", "Ouch! But I'll keep improving!", "Fair enough — I'll try to do better!", "I may not be perfect, but I'm trying my best!"]
+    },
+    {
+      "tag": "weather",
+      "patterns": ["what is the weather", "how is the weather", "is it raining", "weather today", "temperature outside", "will it rain", "what is the temperature", "how hot is it", "how cold is it"],
+      "responses": ["I can't check live weather, but weather.com has you covered!", "No real-time data here — try Google for the latest weather!"]
+    },
+    {
+      "tag": "time",
+      "patterns": ["what time is it", "current time", "tell me the time", "what is the time", "time now", "what's the time"],
+      "responses": ["I can't access real-time data, but your device clock is always accurate!", "Check the clock on your screen — I don't have live time access."]
+    },
+    {
+      "tag": "favorite_color",
+      "patterns": ["what is your favorite color", "do you have a favorite color", "which color do you like", "your favorite color", "what color do you prefer"],
+      "responses": ["I love purple — the color of creativity and AI!", "Definitely gradient colors — I can never pick just one!"]
+    },
+    {
+      "tag": "unknown",
+      "patterns": [],
+      "responses": [
+        "Hmm, I'm not sure about that. Try asking me about AI, ML, NLP, Deep Learning, or Python!",
+        "I didn't quite get that. Can you rephrase?",
+        "That's outside my training! Ask me something about AI or ML — I love those topics!",
+        "Interesting! I'm not trained on that yet. Try asking about Machine Learning or Deep Learning!"
+      ]
+    }
+  ]
+}
